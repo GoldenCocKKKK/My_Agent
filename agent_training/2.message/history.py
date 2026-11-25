@@ -29,6 +29,7 @@ load_dotenv(override=True)
 API_KEY = os.getenv("API_KEY")
 BASE_URL = os.getenv("BASE_URL")
 LLM_NAME = os.getenv("LLM_NAME")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL")
 AGENT_ROLE = os.getenv("AGENT_ROLE")
 AGENT_HELLO = os.getenv("AGENT_HELLO")
 MAX_HISTORY = int(os.getenv("MAX_HISTORY", "3"))
@@ -37,7 +38,7 @@ EXIT_WORD = "quit"
 
 
 llm = init_chat_model(
-    model = LLM_NAME,
+    model = OLLAMA_MODEL,
     model_provider = "ollama",
     temperature = 0.2,
     model_kwargs={

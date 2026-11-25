@@ -12,11 +12,12 @@ load_dotenv(override=True)
 API_KEY = os.getenv("API_KEY")
 BASE_URL = os.getenv("BASE_URL")
 LLM_NAME = os.getenv("LLM_NAME")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL")
 AGENT_ROLE = os.getenv("AGENT_ROLE")
 AGENT_HELLO = os.getenv("AGENT_HELLO")
 
 llm = ChatOllama(
-    model = LLM_NAME,
+    model = OLLAMA_MODEL,
     temperature = 0.2,
     reasoning = False,
 )
